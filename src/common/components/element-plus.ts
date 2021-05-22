@@ -209,6 +209,13 @@ export const installElementPlus = (app: any) => {
     app.use(plugin);
   });
 
+  // 挂载 element-plus 全局 api
+  app.config.globalProperties.$message = ElMessage;
+  app.config.globalProperties.$notify = ElNotification;
+  app.config.globalProperties.$confirm = ElMessageBox.confirm;
+  app.config.globalProperties.$alert = ElMessageBox.alert;
+  app.config.globalProperties.$prompt = ElMessageBox.prompt;
+
   app.config.globalProperties.$ELEMENT = {
     size: "medium",
   };
