@@ -56,7 +56,7 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
           import(/* webpackChunkName: "menu" */ "@/views/system/menu.vue"),
         meta: {
           title: "Menu Management",
-          hidden: false,
+          // hidden: false,
         },
       },
       {
@@ -65,7 +65,7 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
           import(/* webpackChunkName: "role" */ "@/views/system/role.vue"),
         meta: {
           title: "Role Management",
-          hidden: false,
+          // hidden: false,
         },
       },
       {

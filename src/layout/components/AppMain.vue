@@ -1,13 +1,16 @@
 <template>
   <div class="app-main">
-    <!-- vue3 路由缓存 https://next.router.vuejs.org/guide/migration/index.html#router-view-keep-alive-and-transition -->
     <router-view v-slot="{ Component }">
-      <transition name="fade-transform" mode="out-in">
+      <transitionGroup name="fade-transform" mode="out-in">
         <keep-alive>
           <component :is="Component" :key="key" />
         </keep-alive>
-      </transition>
+      </transitionGroup>
     </router-view>
+
+    <!-- <keep-alive>
+      <router-view></router-view>
+    </keep-alive> -->
   </div>
 </template>
 
@@ -20,8 +23,13 @@ export default defineComponent({
   setup() {
     const route = useRoute();
     const key = computed(() => route.path);
+
+    const test = (data: any) => {
+      console.log(data);
+    };
     return {
       key,
+      test,
     };
   },
 });

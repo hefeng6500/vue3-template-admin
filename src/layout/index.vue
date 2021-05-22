@@ -5,11 +5,11 @@
     </div>
     <div class="main-container">
       <div class="header">
-        <navbar />
+        <Navbar />
         <div class="tags-view">tagsview</div>
       </div>
       <!-- AppMain router-view -->
-      <app-main />
+      <AppMain />
     </div>
   </div>
 </template>
