@@ -1,4 +1,7 @@
-import 'element-plus/lib/theme-chalk/index.css'
+import "element-plus/lib/theme-chalk/index.css";
+import lang from "element-plus/lib/locale/lang/zh-cn";
+import "dayjs/locale/zh-cn";
+
 import {
   ElAffix,
   ElAlert,
@@ -93,6 +96,7 @@ import {
   ElMessage,
   ElMessageBox,
   ElNotification,
+  locale,
 } from "element-plus";
 
 export const components = [
@@ -195,6 +199,8 @@ export const plugins = [
 ];
 
 export const installElementPlus = (app: any) => {
+  locale(lang);
+
   components.forEach((component) => {
     app.use(component);
   });
@@ -202,4 +208,8 @@ export const installElementPlus = (app: any) => {
   plugins.forEach((plugin) => {
     app.use(plugin);
   });
+
+  app.config.globalProperties.$ELEMENT = {
+    size: "medium",
+  };
 };
