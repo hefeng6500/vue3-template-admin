@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
-import store from "./store";
+import store, { key } from "./store";
 import "normalize.css/normalize.css";
 import "@/styles/index.scss";
 import { installElementPlus } from "@/common/components/element-plus";
@@ -11,7 +11,7 @@ import initSvgIcon from "@/icons/index";
 const app: any = createApp(App);
 
 app
-  .use(store)
+  .use(store, key)
   .use(router)
   .use(installElementPlus)
   .use(initSvgIcon)
